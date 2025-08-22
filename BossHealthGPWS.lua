@@ -57,10 +57,10 @@ local function CheckBossUnits()
 end
 
 local function OnEncounterStart(_, encounterID)
-    if BossHealthGPWS_SoundEnabled then
-        PlaySoundFile("Interface\\AddOns\\BossHealthGPWS\\plus100.mp3", "master")
-    end
     if BOSSES[encounterID] then
+		if BossHealthGPWS_SoundEnabled then
+			PlaySoundFile("Interface\\AddOns\\BossHealthGPWS\\plus100.mp3", "master")
+		end
         currentEncounter = encounterID
         wipe(seenThresholds)
     end
